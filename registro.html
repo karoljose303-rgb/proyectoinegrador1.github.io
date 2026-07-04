@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+
+<button class="theme-btn" id="themeBtn" title="Cambiar tema">☾</button>
+
+<div class="registro-container">
+    <form class="registro-form" action="registro.php" method="POST">
+        <h1>Registro</h1>
+
+        <input type="text" name="usuario" placeholder="Usuario" required>
+
+        <input type="password" name="password" placeholder="Contraseña" required>
+
+        <input type="email" name="correo" placeholder="Correo electrónico" required>
+
+        <button type="submit">Guardar</button>
+
+        <a href="index.html">Volver al menú</a>
+    </form>
+</div>
+
+<script src="registro.js"></script>
+</body>
+</html>

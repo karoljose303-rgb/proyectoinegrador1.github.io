@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Bebidas</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header class="top-bar">
+    <div class="logo-box">
+        <img src="imagenes/logo-utn.jpg" alt="Logo UTN" class="logo">
+    </div>
+
+    <h1 class="welcome-title">Bienvenidos UTN</h1>
+
+    <div class="header-actions">
+        <button class="theme-btn" id="themeBtn" title="Cambiar tema">☾</button>
+
+        <button class="user-btn" id="userBtn" title="Cuenta">👤</button>
+
+        <button class="cart-btn" id="cartBtn" title="Abrir carrito">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
+    </div>
+</header>
+
+<main class="menu">
+    <div class="food-card">
+        <img src="imagenes/tortadejamon.jpg" alt="Torta De Jamón">
+        <p class="product-name">Torta de Jamón</p>
+        <p class="price">$28</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta De Jamón" data-price="28">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortadesalchicha.jpg" alt="Salchicha">
+        <p class="product-name">Torta de Salchicha</p>
+        <p class="price">$28</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Salchicha" data-price="28">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortadehuevo.jpg" alt="Huevo">
+        <p class="product-name">Torta de Huevo</p>
+        <p class="price">$28</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Huevo" data-price="28">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortadepierna.jpg" alt="Pierna">
+        <p class="product-name">Torta de Pierna</p>
+        <p class="price">$39</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Pierna" data-price="39">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortadequesillo.jpg" alt="Quesillo">
+        <p class="product-name">Torta de Quesillo</p>
+        <p class="price">$39</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Quesillo" data-price="39">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortadepollo.jpg" alt="Milanesa / Pollo">
+        <p class="product-name">Torta de Milanesa / Pollo</p>
+        <p class="price">$39</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Milanesa / Pollo" data-price="39">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortaderes.jpg" alt="Milanesa / Res">
+        <p class="product-name">Torta de Milanesa / Res</p>
+        <p class="price">$44</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Milanesa / Res" data-price="44">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/quesadilladetinga.jpg" alt="Tinga de pollo">
+        <p class="product-name">Tinga de pollo</p>
+        <p class="price">$27</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Tinga de pollo" data-price="27">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/quesadilladequeso.jpg" alt="Queso">
+        <p class="product-name">Queso</p>
+        <p class="price">$27</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Queso" data-price="27">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/pambazo.jpg" alt="Pambazo">
+        <p class="product-name">Pambazo</p>
+        <p class="price">$27</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Pambazo" data-price="27">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortadehawaiana.jpg" alt="Hawaiana">
+        <p class="product-name">Hawaiana</p>
+        <p class="price">$50</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Hawaiana" data-price="50">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortadetoluqueña.jpg" alt="Toluqueña">
+        <p class="product-name">Toluqueña</p>
+        <p class="price">$48</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Toluqueña" data-price="48">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortadesuiza.jpg" alt="Suiza">
+        <p class="product-name">Suiza</p>
+        <p class="price">$48</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Suiza" data-price="48">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortadesuadero.jpg" alt="Suadero">
+        <p class="product-name">Suadero</p>
+        <p class="price">$49</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Suadero" data-price="49">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortaderusa.jpg" alt="Rusa">
+        <p class="product-name">Rusa</p>
+        <p class="price">$56</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Rusa" data-price="56">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortadecubana.jpg" alt="Cubana">
+        <p class="product-name">Cubana</p>
+        <p class="price">$56</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Cubana" data-price="56">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tortadeutn.jpg" alt="UTN">
+        <p class="product-name">UTN</p>
+        <p class="price">$56</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de UTN" data-price="56">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/sandwichdejamon.jpg" alt="Sándwich de jamón">
+        <p class="product-name">Sándwich de jamón</p>
+        <p class="price">$32</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Sándwich de jamón" data-price="32">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/sandwichdequesoblanco.jpg" alt="Sándwich de queso blanco">
+        <p class="product-name">Sándwich de queso blanco</p>
+        <p class="price">$32</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Sándwich de queso blanco" data-price="32">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/sandwichdeatun.jpg" alt="Sándwich de atún">
+        <p class="product-name">Sándwich de atún</p>
+        <p class="price">$50</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Sándwich de atún" data-price="50">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/sandwichdepollo.jpg" alt="Sándwich de pollo">
+        <p class="product-name">Sándwich de pollo</p>
+        <p class="price">$50</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Sándwich de pollo" data-price="50">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/sandwichconpapas.jpg" alt="Club Sándwich con papas">
+        <p class="product-name">Club Sándwich con papas</p>
+        <p class="price">$65</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Club Sándwich con papas" data-price="65">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/hamburguesasencilla.jpg" alt="Hamburguesa sencilla">
+        <p class="product-name">Hamburguesa sencilla</p>
+        <p class="price">$38</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Hamburguesa sencilla" data-price="38">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/hamburguesaconquesillo.jpg" alt="Hamburguesa con quesillo">
+        <p class="product-name">Hamburguesa con quesillo</p>
+        <p class="price">$48</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Hamburguesa con quesillo" data-price="48">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/hamburguesahawaiana.jpg" alt="Hamburguesa hawaiana">
+        <p class="product-name">Hamburguesa hawaiana</p>
+        <p class="price">$56</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Hamburguesa hawaiana" data-price="56">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/hamburguesaconpapas.jpg" alt="Hamburguesa con papas">
+        <p class="product-name">Hamburguesa con papas</p>
+        <p class="price">$54</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Hamburguesa con papas" data-price="54">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/ordenpapas.jpg" alt="Orden de papas">
+        <p class="product-name">Orden de papas</p>
+        <p class="price">$39</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Torta de Orden de papas" data-price="39">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/sincronizada.jpg" alt="Sincronizada">
+        <p class="product-name">Sincronizada</p>
+        <p class="price">$32</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Sincronizada" data-price="32">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/sincronizadadepierna.jpg" alt="Sincronizada de pierna">
+        <p class="product-name">Sincronizada de pierna</p>
+        <p class="price">$46</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Sincronizada de pierna" data-price="46">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/sincronizadadesuadero.jpg" alt="Sincronizada de suadero">
+        <p class="product-name">Sincronizada de suadero</p>
+        <p class="price">$46</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Sincronizada de suadero" data-price="46">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/cuernitodepollo.jpg" alt="Cuernito de pollo">
+        <p class="product-name">Cuernito de pollo</p>
+        <p class="price">$48</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Cuernito de pollo" data-price="48">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/cuernitodemilanesa.jpg" alt="Cuernito de milanesa">
+        <p class="product-name">Cuernito de milanesa</p>
+        <p class="price">$52</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Cuernito de milanesa" data-price="52">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tacodesuadero.jpg" alt="Taco de suadero">
+        <p class="product-name">Taco de suadero</p>
+        <p class="price">$19</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Taco de suadero" data-price="19">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tacodechorizo.jpg" alt="Taco de chorizo">
+        <p class="product-name">Taco de chorizo</p>
+        <p class="price">$19</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Taco de chorizo" data-price="19">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tacocampechano.jpg" alt="Taco campechano">
+        <p class="product-name">Taco campechano</p>
+        <p class="price">$19</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Taco campechano" data-price="19">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tacodemilanesadepollo.jpg" alt="Taco de milanesa de pollo">
+        <p class="product-name">Taco de milanesa de pollo</p>
+        <p class="price">$19</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Taco de milanesa de pollo" data-price="19">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/tacodecanasta.jpg" alt="Taco de canasta">
+        <p class="product-name">Taco de canasta</p>
+        <p class="price">$45</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Taco de canasta" data-price="45">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/ordendehotdogs.jpg" alt="Orden de hot dogs">
+        <p class="product-name">Orden de hot dogs</p>
+        <p class="price">$46</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Orden de hot dogs" data-price="46">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/panconmantequilla.jpg" alt="Pan con mantequilla">
+        <p class="product-name">Pan con mantequilla</p>
+        <p class="price">$22</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Pan con mantequilla" data-price="22">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/maruchan.jpg" alt="Maruchan">
+        <p class="product-name">Maruchan</p>
+        <p class="price">$0</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Maruchan" data-price="0">Agregar al carrito</button>
+    </div>
+
+    <div class="food-card">
+        <img src="imagenes/capuchinochicogrande.jpg" alt="Capuchino chico/grande">
+        <p class="product-name">Capuchino chico/grande</p>
+        <p class="price">$0</p>
+        <div class="quantity"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+        <button class="add-btn" data-name="Capuchino chico/grande" data-price="0">Agregar al carrito</button>
+    </div>
+</main>
+<div class="cart-overlay" id="cartOverlay">
+    <section class="cart-panel">
+        <button class="close-cart" id="closeCart">×</button>
+
+        <h2>Carrito</h2>
+        <div id="cartItems"></div>
+
+        <div class="cart-total">
+            Total: $<span id="cartTotal">0.00</span>
+        </div>
+
+        <button class="buy-btn" id="buyBtn">Comprar y generar QR</button>
+
+        <div class="qr-box" id="qrBox">
+            <h3>QR del pedido</h3>
+            <canvas id="qrCanvas"></canvas>
+            <p>Escanea este código para ver el pedido.</p>
+        </div>
+    </section>
+</div>
+
+<div class="login-overlay" id="loginOverlay">
+    <section class="login-panel">
+        <button class="close-login" id="closeLogin">×</button>
+
+        <h2>Cuenta</h2>
+<form class="login-form" action="login.php" method="POST">
+    <input type="text" name="usuario" placeholder="Usuario" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+
+    <div class="login-actions">
+    <a href="registro.html" class="register-link">
+        <button type="button" id="registerBtn">Registrar</button>
+    </a>
+    <button type="submit" id="loginBtn">Iniciar sesión</button>
+</div>
+</form>
+    </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

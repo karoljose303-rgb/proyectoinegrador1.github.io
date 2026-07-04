@@ -1,0 +1,658 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --accent: #00a6d6;
+    --accent-dark: #008bb5;
+    --dark: #181818;
+    --light: #f4f4f4;
+    --border-color: #ccc;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--light);
+    color: #222;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+    background: var(--dark);
+    color: #f5f5f5;
+    --border-color: #444;
+}
+
+/* Header */
+.top-bar {
+    width: 100%;
+    padding: 14px 24px;
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    background: inherit;
+    z-index: 10;
+}
+
+.logo-box {
+    width: 82px;
+    height: 58px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid rgba(0, 166, 214, 0.35);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+body.dark .logo-box {
+    background: #f7f7f7;
+    border-color: var(--accent);
+    box-shadow: 0 0 16px rgba(0, 166, 214, 0.35);
+}
+
+.welcome-title {
+    text-align: center;
+    font-size: 28px;
+    color: var(--accent);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Botones */
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.theme-btn {
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    color: #222;
+    font-size: 22px;
+}
+
+body.dark .theme-btn {
+    color: var(--accent);
+}
+
+.user-btn,
+.cart-btn {
+    position: relative;
+    width: 48px;
+    height: 42px;
+    background: #222;
+    color: white;
+    font-size: 20px;
+}
+
+body.dark .user-btn,
+body.dark .cart-btn {
+    background: var(--accent);
+    color: #061216;
+}
+
+#cartCount {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--accent);
+    color: white;
+    padding: 3px 7px;
+    border-radius: 50%;
+    font-size: 13px;
+}
+
+body.dark #cartCount {
+    background: white;
+    color: #061216;
+}
+
+/* Menu */
+.menu {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.food-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+body.dark .food-card,
+body.dark .cart-panel,
+body.dark .login-panel,
+body.dark .payment-panel,
+body.dark .paypal-panel {
+    background: #252525;
+}
+
+.food-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-name {
+    margin-top: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.25;
+}
+
+body.dark .product-name {
+    color: #f5f5f5;
+}
+
+.price {
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* Cantidad */
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.quantity button {
+    width: 35px;
+    height: 35px;
+    background: #222;
+    color: white;
+    font-size: 20px;
+}
+
+body.dark .quantity button {
+    background: var(--accent);
+    color: #061216;
+}
+
+.quantity span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Acciones */
+.add-btn,
+.buy-btn,
+.payment-form button {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent);
+    color: white;
+    font-size: 16px;
+}
+
+.add-btn:hover,
+.buy-btn:hover,
+.payment-form button:hover {
+    background: var(--accent-dark);
+}
+
+.card-pay-btn {
+    width: 100%;
+    padding: 12px;
+    background: #2148d8;
+    color: white;
+    font-size: 16px;
+}
+
+.card-pay-btn:hover {
+    background: #1938aa;
+}
+
+.paypal-pay-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ffc439;
+    color: #111;
+    font-size: 16px;
+}
+
+.paypal-pay-btn:hover {
+    background: #f2b600;
+}
+
+/* Modales */
+.cart-overlay,
+.login-overlay,
+.payment-overlay,
+.paypal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    padding: 20px;
+}
+
+.payment-overlay {
+    z-index: 25;
+}
+
+.paypal-overlay {
+    z-index: 26;
+}
+
+.cart-overlay.active,
+.login-overlay.active,
+.payment-overlay.active,
+.paypal-overlay.active {
+    display: flex;
+}
+
+.cart-panel,
+.login-panel,
+.payment-panel,
+.paypal-panel {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    max-height: 85vh;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    overflow-y: auto;
+    animation: floatingPop 0.35s ease;
+}
+
+@keyframes floatingPop {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.close-cart,
+.close-login,
+.close-payment,
+.close-paypal {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #222;
+    color: white;
+    font-size: 24px;
+}
+
+body.dark .close-cart,
+body.dark .close-login,
+body.dark .close-payment,
+body.dark .close-paypal {
+    background: var(--accent);
+    color: #061216;
+}
+
+.cart-panel h2,
+.login-panel h2,
+.payment-panel h2,
+.paypal-panel h2 {
+    margin-bottom: 20px;
+}
+
+/* Carrito */
+.cart-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 0;
+    font-size: 16px;
+}
+
+.cart-total {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.cart-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* QR */
+.qr-box {
+    display: none;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.qr-box.active {
+    display: block !important;
+}
+
+.qr-box h3 {
+    margin-bottom: 12px;
+    color: var(--accent);
+}
+
+.qr-box canvas {
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    background: white !important;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.qr-box p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Pago tarjeta */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.payment-form input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(0, 166, 214, 0.15);
+}
+
+body.dark .payment-form input {
+    background: #181818;
+    color: white;
+}
+
+.payment-row {
+    display: flex;
+    gap: 12px;
+}
+
+/* PayPal */
+.paypal-total {
+    margin-bottom: 18px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+#paypal-button-container {
+    width: 100%;
+    min-height: 45px;
+}
+
+/* Perfil */
+.profile-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-box h3 {
+    color: var(--accent);
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 12px;
+    background: #d93636;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.logout-btn:hover {
+    background: #b92c2c;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .top-bar {
+        grid-template-columns: 60px 1fr auto;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .logo-box {
+        width: 56px;
+        height: 42px;
+        padding: 4px;
+    }
+
+    .welcome-title {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .header-actions {
+        gap: 6px;
+    }
+
+    .theme-btn,
+    .user-btn,
+    .cart-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    #cartCount {
+        top: -6px;
+        right: -6px;
+        font-size: 11px;
+        padding: 2px 6px;
+    }
+
+    .menu {
+        width: 94%;
+        margin: 18px auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .food-card {
+        padding: 10px;
+    }
+
+    .food-card img {
+        height: 120px;
+    }
+
+    .product-name {
+        font-size: 14px;
+        min-height: 38px;
+    }
+
+    .price {
+        font-size: 20px;
+        margin: 8px 0;
+    }
+
+    .quantity {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .quantity button {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    .quantity span {
+        font-size: 17px;
+    }
+
+    .add-btn,
+    .buy-btn,
+    .card-pay-btn,
+    .paypal-pay-btn,
+    .payment-form button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .cart-panel,
+    .login-panel,
+    .payment-panel,
+    .paypal-panel {
+        width: 100%;
+        max-width: 95vw;
+        max-height: 88vh;
+        padding: 22px 16px;
+    }
+
+    .cart-actions,
+    .payment-row {
+        flex-direction: column;
+    }
+
+    .qr-box canvas {
+        width: 200px;
+    }
+}
+
+@media (max-width: 420px) {
+    .top-bar {
+        grid-template-columns: 48px 1fr auto;
+        padding: 10px 8px;
+    }
+
+    .logo-box {
+        width: 46px;
+        height: 36px;
+    }
+
+    .welcome-title {
+        font-size: 15px;
+    }
+
+    .header-actions {
+        gap: 4px;
+    }
+
+    .theme-btn,
+    .user-btn,
+    .cart-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .menu {
+        width: 95%;
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .food-card img {
+        height: 155px;
+    }
+
+    .product-name {
+        font-size: 15px;
+        min-height: auto;
+    }
+
+    .cart-overlay,
+    .login-overlay,
+    .payment-overlay,
+    .paypal-overlay {
+        padding: 10px;
+    }
+
+    .cart-panel,
+    .login-panel,
+    .payment-panel,
+    .paypal-panel {
+        max-width: 100%;
+        padding: 20px 14px;
+    }
+
+    .close-cart,
+    .close-login,
+    .close-payment,
+    .close-paypal {
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+        top: 14px;
+        right: 14px;
+    }
+}
