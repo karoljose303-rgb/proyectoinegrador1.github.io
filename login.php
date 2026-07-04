@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$servidor = "localhost";
-$usuarioBD = "root";
-$passwordBD = "";
-$baseDatos = "proyecto";
+$servidor = "sql5.freesqldatabase.com";
+$usuarioBD = "sql5832235";
+$passwordBD = "XHzwpw1gUJ";
+$baseDatos = " sql5832235";
 
 $conexion = new mysqli($servidor, $usuarioBD, $passwordBD, $baseDatos);
 
